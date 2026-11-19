@@ -53,11 +53,11 @@ footer .name{color:var(--navy);font-weight:800;font-size:18px}
 
 <main>
   <div class="card">
-    <a class="dl" href="https://github.com/eslamashraf2217-sudo/evac/releases/latest/download/UAAC-Evacuation.apk">
+    <a class="dl" href="https://github.com/eslamashraf2217-sudo/evac/raw/main/UAAC-Evacuation.apk">
       تحميل التطبيق للأندرويد
       <small>Download for Android</small>
     </a>
-    <div class="ver" id="ver">أحدث نسخة / Latest version</div>
+    <div class="ver">النسخة / Version 1.4  •  19/11/2026</div>
   </div>
 
   <div class="card">
@@ -101,16 +101,5 @@ footer .name{color:var(--navy);font-weight:800;font-size:18px}
   HSE Manager
 </footer>
 
-<script>
-fetch("https://api.github.com/repos/eslamashraf2217-sudo/evac/releases/latest")
-  .then(function (r) { return r.ok ? r.json() : null; })
-  .then(function (j) {
-    if (!j) return;
-    var d = new Date(j.published_at);
-    var dd = ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2) + "/" + d.getFullYear();
-    document.getElementById("ver").textContent = "النسخة / Version " + j.name.replace(/^\D+/, "") + "  •  " + dd;
-  })
-  .catch(function () {});
-</script>
 </body>
 </html>
